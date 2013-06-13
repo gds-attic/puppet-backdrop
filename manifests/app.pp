@@ -32,7 +32,7 @@ define backdrop::app (
         systempkgs => false,
         owner      => $user,
         group      => $group,
-        require    => File[$app_path],
+        require    => File["$app_path/shared"],
     }
     file { "$config_path/gunicorn":
         ensure  => present,
